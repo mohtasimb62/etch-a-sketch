@@ -1,5 +1,5 @@
 let gridSize = prompt("What is the grid size?");
-let size = 480/gridSize;
+let size = 720/gridSize;
 
 const containerForGrids = document.querySelector('#container');
 
@@ -15,4 +15,9 @@ generateGrids.addEventListener('click', () => {
 
         }
     }
+});
+
+const fillColour = document.querySelector('#container');
+fillColour.addEventListener('mousemove', () => {
+    fillColour.setAttribute('style', 'backgroud-color: red');
 });
