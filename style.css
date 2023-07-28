@@ -7,9 +7,7 @@
 
 #container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     height: 720px;
     width: 720px;
-    
 }
-
