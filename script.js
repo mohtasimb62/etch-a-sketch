@@ -2,6 +2,7 @@ let gridSize = prompt("What is the grid size?");
 
 const containerForGrid = document.querySelector('#container');
 
+// 2 ways of implementing the grid: The non nested uses wrap and dynamic cell size, the nested doesn't use wrap.
 const generateGrids = document.querySelector('#gridGeneration');
 generateGrids.addEventListener('click', () => {
 
