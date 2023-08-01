@@ -2,7 +2,7 @@ let gridSize = prompt("What is the grid size?");
 
 const containerForGrid = document.querySelector('#container');
 
-// 2 ways of implementing the grid: The non nested uses wrap and dynamic cell size, the nested doesn't use wrap.
+// 2 ways of implementing the grid: The non nested uses wrap and dynamic cell size, the nested doesn't use wrap. This was implemented using the latter
 const generateGrids = document.querySelector('#gridGeneration');
 generateGrids.addEventListener('click', () => {
 
@@ -14,21 +14,23 @@ generateGrids.addEventListener('click', () => {
     }
 
     const addingRows = document.getElementsByClassName('column');
-    for (let k = 0; k < gridSize; k++) {
-        for (let j = 0; j < addingRows.length; j++) {
+    for (let j = 0; j < addingRows.length; j++) {
+        let curRow = addingRows[j];
+        for (let k = 0; k < gridSize; k++) {
             const rows = document.createElement('div');
             rows.classList.add('row');
             rows.style.cssText = "flex: 1; outline: 1px solid black";
-            addingRows[j].appendChild(rows);
-        }    
-    }
-    
-    
-    // const allGrids = document.querySelectorAll('.grid');
-    // allGrids.forEach(grid => {
-    //     grid.setAttribute('style', 'outline: 1px solid black; flex-wrap: wrap; flex: 1 0 auto;');
-    //     grid.addEventListener('mouseenter', () => {
-    //         grid.style.backgroundColor = 'red';
-    //     });
-    // });
+            curRow.appendChild(rows);
+        }  
+    }   
+});
+
+const fillColor = document.querySelector('#fillColor');
+fillColor.addEventListener('click', () => {
+    const allGrids = document.querySelectorAll('.row');
+    allGrids.forEach(row => {
+        row.addEventListener('mouseenter', () => {
+            row.style.backgroundColor = 'red';
+        });
+    });
 });
